@@ -2,10 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 def HomePage(request):
-    pass
+    return render(request, 'home.html')
 
 def SignUp(request):
     return render(request, 'signup.html')
 
 def LogIn(request):
-    pass
+    return render(request, 'login.html')
