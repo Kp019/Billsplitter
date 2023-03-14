@@ -8,10 +8,12 @@
 </head>
 <body>
     <h1>Signup Bro!!!!</h1>
-    <div>
+    <form method="post">
+        {% csrf_token %}
         <input type="text" name="username" value="enter your name">
-        <input type="text" name="username" value="enter your password">
-        <input type="button" value="signup">
-    </div>
+        <input type="text" name="eml" value="enter your email">
+        <input type="text" name="password" value="enter your password">
+        <button type="submit"> signup </button>
+    </form>
 </body>
 </html>

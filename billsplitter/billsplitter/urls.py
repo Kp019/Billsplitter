@@ -18,7 +18,5 @@ from django.urls import path
 from splitapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.SignUp, name='signup'),
-    path('login/', views.LogIn, name='login'),
-    path('homepage/', views.HomePage, name='home')
+    
 ]

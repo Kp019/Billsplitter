@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create bill</h1>
+    <form method="post">
+        <input type="text" name="b_name" value="bill name">
+        <input type="number" name="parti_no" value="no parti">
+        {{% for i in range(parti_no)%}}
+            <input type="text" name ="b_item" value="items">
+            <input type="number" name = "b_qty" value="quantity">
+            <input type="number" name = "b_price" value="price">
+            <button type="submit"> add </button>
+        {{% endfor %}}
+        <button type="submit"> create a bill </button>
+    </form>    
+</body>
+</html>

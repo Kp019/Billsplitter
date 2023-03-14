@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1>{{ bill.name }}</h1>
+    <p><strong>Total amount:</strong> {{ bill.total_amount }}</p>
+
+    <h2>Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item name</th>
+                <th>Quantity</th>
+                <th>Price per item</th>
+                <th>Total cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in bill.items.all %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.price_per_item }}</td>
+                    <td>{{ item.total_cost }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Subtotal</td>
+                <td>{{ bill.subtotal }}</td>
+            </tr>
+            <tr>
+                <td colspan="3">Tax</td>
+                <td>{{ bill.tax }}</td>
+            </tr>
+            <tr>
+                <td colspan="3">Tip</td>
+                <td>{{ bill.tip }}</td>
+            </tr>
+            <tr>
+                <td colspan="3">Total cost</td>
+                <td>{{ bill.total_cost }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
+</body>
+</html>
